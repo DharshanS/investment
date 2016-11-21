@@ -21,7 +21,7 @@ public class Marketstratergy implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "marketstratergySeq", table = "marketstratergySeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "marketstratergy")
+	@TableGenerator(name = "marketstratergySeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "marketstratergy")
 	@GeneratedValue(generator = "marketstratergySeq", strategy = GenerationType.TABLE)
 	private int id;
 	private String name;

@@ -21,7 +21,7 @@ public class Investsectorsmap implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "investsectorsmapSeq", table = "investsectorsmapSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investsectorsmap")
+	@TableGenerator(name = "investsectorsmapSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investsectorsmap")
 	@GeneratedValue(generator = "investsectorsmapSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private Investsectores investsectores;

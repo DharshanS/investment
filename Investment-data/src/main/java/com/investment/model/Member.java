@@ -26,7 +26,7 @@ public class Member implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "memberSeq", table = "memberSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "member")
+	@TableGenerator(name = "memberSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "member")
 	@GeneratedValue(generator = "memberSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private Designations designations;

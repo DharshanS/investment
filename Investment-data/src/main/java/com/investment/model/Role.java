@@ -25,7 +25,7 @@ public class Role implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "rolesSeq", table = "rolesSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "roles")
+	@TableGenerator(name = "rolesSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "roles")
 	@GeneratedValue(generator = "rolesSeq", strategy = GenerationType.TABLE)
 	private int id;
 

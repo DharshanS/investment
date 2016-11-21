@@ -27,7 +27,7 @@ public class Currency  implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@TableGenerator(name = "currencySeq", table = "currencySeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "currency")
+	@TableGenerator(name = "currencySeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "currency")
 	@GeneratedValue(generator = "currencySeq", strategy = GenerationType.TABLE)
 	private int id;
      private String country;

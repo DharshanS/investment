@@ -21,7 +21,7 @@ public class Customertype implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "customertypeSeq", table = "customertypeSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "customertype")
+	@TableGenerator(name = "customertypeSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "customertype")
 	@GeneratedValue(generator = "customertypeSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private String type;

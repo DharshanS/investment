@@ -26,7 +26,7 @@ public class Campigantype implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "campigantypeSeq", table = "campigantypeSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "campigantype")
+	@TableGenerator(name = "campigantypeSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "campigantype")
 	@GeneratedValue(generator = "campigantypeSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private String type;

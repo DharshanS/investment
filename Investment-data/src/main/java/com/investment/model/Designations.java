@@ -24,7 +24,7 @@ public class Designations implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "designationsSeq", table = "designationsSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "designations")
+	@TableGenerator(name = "designationsSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "designations")
 	@GeneratedValue(generator = "designationsSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private int name;

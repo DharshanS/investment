@@ -21,7 +21,7 @@ public class Userproject implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "userprojectSeq", table = "userprojectSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "userproject")
+	@TableGenerator(name = "userprojectSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "userproject")
 	@GeneratedValue(generator = "userprojectSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private User users;

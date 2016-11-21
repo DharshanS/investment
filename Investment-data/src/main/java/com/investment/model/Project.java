@@ -29,7 +29,7 @@ public class Project implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "projectsSeq", table = "projectsSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "projects")
+	@TableGenerator(name = "projectsSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "projects")
 	@GeneratedValue(generator = "projectsSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private Campigantype campigantype;

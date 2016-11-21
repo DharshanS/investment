@@ -27,7 +27,7 @@ public class User implements java.io.Serializable {
 	*/
 	private static final long serialVersionUID = 1L;
 	@Id
-	@TableGenerator(name = "usersSeq", table = "usersSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "users")
+	@TableGenerator(name = "usersSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "users")
 	@GeneratedValue(generator = "usersSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private String firstname;

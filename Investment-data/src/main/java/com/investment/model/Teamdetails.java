@@ -27,7 +27,7 @@ public class Teamdetails implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "teamdetailsSeq", table = "teamdetailsSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "teamdetails")
+	@TableGenerator(name = "teamdetailsSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "teamdetails")
 	@GeneratedValue(generator = "teamdetailsSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private Project project;

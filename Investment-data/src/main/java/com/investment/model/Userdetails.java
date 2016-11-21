@@ -23,7 +23,7 @@ public class Userdetails implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "userdetailsSeq", table = "userdetailsSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "userdetails")
+	@TableGenerator(name = "userdetailsSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "userdetails")
 	@GeneratedValue(generator = "userdetailsSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private User users;

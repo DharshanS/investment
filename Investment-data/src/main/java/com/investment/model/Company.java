@@ -25,7 +25,7 @@ public class Company implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "companySeq", table = "companySeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "company")
+	@TableGenerator(name = "companySeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "company")
 	@GeneratedValue(generator = "companySeq", strategy = GenerationType.TABLE)
 	private int id;
 	private Project project;

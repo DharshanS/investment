@@ -21,7 +21,7 @@ public class Investment implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "investmentsSeq", table = "investmentsSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investments")
+	@TableGenerator(name = "investmentsSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investments")
 	@GeneratedValue(generator = "investmentsSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private Project projects;
