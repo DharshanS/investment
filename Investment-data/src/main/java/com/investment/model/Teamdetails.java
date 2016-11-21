@@ -1,9 +1,7 @@
 package com.investment.model;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -33,7 +31,8 @@ public class Teamdetails implements java.io.Serializable {
 	@GeneratedValue(generator = "teamdetailsSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private Project project;
-	private List<Member> members = new ArrayList<Member>();
+	
+	//private List<Member> members = new ArrayList<Member>();
 
 	public Teamdetails() {
 	}
@@ -46,7 +45,7 @@ public class Teamdetails implements java.io.Serializable {
 	public Teamdetails(int id, Project project, List<Member> members) {
 		this.id = id;
 		this.project = project;
-		this.members = members;
+		//this.members = members;
 	}
 
 	public int getId() {
@@ -66,13 +65,13 @@ public class Teamdetails implements java.io.Serializable {
 		this.project = project;
 	}
 
-	@OneToMany(fetch=FetchType.LAZY)
-	public List<Member> getMembers() {
-		return this.members;
-	}
-
-	public void setMembers(List<Member> members) {
-		this.members = members;
-	}
+//	@OneToMany(fetch=FetchType.LAZY ,mappedBy="teamdetails")
+//	public List<Member> getMembers() {
+//		return this.members;
+//	}
+//
+//	public void setMembers(List<Member> members) {
+//		this.members = members;
+//	}
 
 }

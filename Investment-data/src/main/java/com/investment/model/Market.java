@@ -29,7 +29,7 @@ public class Market implements java.io.Serializable {
 	@GeneratedValue(generator = "marketSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private String place;
-	private Set marketdetailses = new HashSet(0);
+//	private Set marketdetailses = new HashSet(0);
 
 	public Market() {
 	}
@@ -42,7 +42,7 @@ public class Market implements java.io.Serializable {
 	public Market(int id, String place, Set marketdetailses) {
 		this.id = id;
 		this.place = place;
-		this.marketdetailses = marketdetailses;
+		//this.marketdetailses = marketdetailses;
 	}
 
 	public int getId() {
@@ -61,12 +61,12 @@ public class Market implements java.io.Serializable {
 		this.place = place;
 	}
 
-	public Set getMarketdetailses() {
-		return this.marketdetailses;
-	}
-
-	public void setMarketdetailses(Set marketdetailses) {
-		this.marketdetailses = marketdetailses;
-	}
+//	public Set getMarketdetailses() {
+//	//	return this.marketdetailses;
+//	}
+//
+//	public void setMarketdetailses(Set marketdetailses) {
+//		this.marketdetailses = marketdetailses;
+//	}
 
 }

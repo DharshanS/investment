@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
@@ -53,7 +55,7 @@ public class Member implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "mapped")
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "did")
 	public Designations getDesignations() {
 		return this.designations;
@@ -63,6 +65,7 @@ public class Member implements java.io.Serializable {
 		this.designations = designations;
 	}
 
+	@ManyToOne(fetch=FetchType.LAZY)
 	public Teamdetails getTeamdetails() {
 		return this.teamdetails;
 	}
