@@ -15,7 +15,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Role")
 @Table(name = "roles")
 public class Role implements java.io.Serializable {
 

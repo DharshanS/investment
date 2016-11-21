@@ -16,7 +16,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Campigantype")
 @Table(name = "campigantype")
 public class Campigantype implements java.io.Serializable {
 

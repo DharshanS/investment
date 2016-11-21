@@ -16,7 +16,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Currency")
 @Table(name = "currency")
 public class Currency  implements java.io.Serializable {
 

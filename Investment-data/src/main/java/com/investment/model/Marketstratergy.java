@@ -11,7 +11,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Marketstratergy")
 @Table(name = "marketstratergy")
 public class Marketstratergy implements java.io.Serializable {
 

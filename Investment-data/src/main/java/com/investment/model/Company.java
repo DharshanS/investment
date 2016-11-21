@@ -15,7 +15,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Company")
 @Table(name = "company")
 public class Company implements java.io.Serializable {
 
@@ -128,3 +128,7 @@ public class Company implements java.io.Serializable {
 	}
 
 }
+
+
+
+

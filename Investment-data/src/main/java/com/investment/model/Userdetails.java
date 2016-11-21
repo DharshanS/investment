@@ -13,7 +13,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Userdetails")
 @Table(name = "userdetails")
 public class Userdetails implements java.io.Serializable {
 

@@ -15,7 +15,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Investsectores")
 @Table(name = "investsectores")
 public class Investsectores implements java.io.Serializable {
 

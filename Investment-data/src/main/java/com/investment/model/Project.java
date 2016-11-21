@@ -19,7 +19,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Project")
 @Table(name = "projects")
 public class Project implements java.io.Serializable {
 

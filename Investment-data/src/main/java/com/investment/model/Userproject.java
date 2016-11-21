@@ -11,7 +11,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Userproject")
 @Table(name = "userproject")
 public class Userproject implements java.io.Serializable {
 

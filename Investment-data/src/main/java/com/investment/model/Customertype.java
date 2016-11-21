@@ -11,7 +11,7 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity
+@Entity(name = "Customertype")
 @Table(name = "customertype")
 public class Customertype implements java.io.Serializable {
 
