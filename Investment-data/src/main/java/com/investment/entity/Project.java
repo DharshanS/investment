@@ -45,7 +45,7 @@ public class Project implements java.io.Serializable {
 	private Customertype customertype;
 	private Company company;
 	private Teamdetails team;
-	private List<Investsectorsmap> investSectors = new ArrayList<Investsectorsmap>();
+	private Investsectorsmap investSectors;
 
 	public Project() {
 		super();
@@ -198,11 +198,11 @@ public class Project implements java.io.Serializable {
 	}
 
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project")
-	public List<Investsectorsmap> getInvestsectorsmaps() {
+	public Investsectorsmap getInvestsectorsmaps() {
 		return this.investSectors;
 	}
 
-	public void setInvestsectorsmaps(List<Investsectorsmap> investsectorsmaps) {
+	public void setInvestsectorsmaps(Investsectorsmap investsectorsmaps) {
 		this.investSectors = investsectorsmaps;
 	}
 

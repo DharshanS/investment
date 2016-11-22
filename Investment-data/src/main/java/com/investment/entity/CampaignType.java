@@ -60,7 +60,7 @@ public class CampaignType implements java.io.Serializable {
 		this.type = type;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	public Project getProjectses() {
 		return this.project;
 	}

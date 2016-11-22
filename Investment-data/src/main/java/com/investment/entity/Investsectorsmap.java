@@ -54,7 +54,7 @@ public class Investsectorsmap implements java.io.Serializable {
 		this.investsectores = investsectores;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project")
+	@OneToOne(fetch = FetchType.LAZY)
 	public Project getproject() {
 		return this.project;
 	}

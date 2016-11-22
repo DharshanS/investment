@@ -57,7 +57,7 @@ public class Teamdetails implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
+	@OneToOne(fetch = FetchType.LAZY,  cascade = CascadeType.ALL)
 	public Project getproject() {
 		return this.project;
 	}

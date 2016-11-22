@@ -73,7 +73,7 @@ public class Currency  implements java.io.Serializable {
         this.symbol = symbol;
     }
     
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     public Project getProjectses() {
         return this.project;
     }
