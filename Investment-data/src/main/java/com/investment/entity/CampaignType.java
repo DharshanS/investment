@@ -1,8 +1,6 @@
-package com.investment.model;
+package com.investment.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -16,9 +14,9 @@ import javax.persistence.TableGenerator;
  * @author Dharshan.S
  *
  */
-@Entity(name = "Campigantype")
-@Table(name = "campigantype")
-public class Campigantype implements java.io.Serializable {
+@Entity(name = "CampaignType")
+@Table(name = "campaigntype")
+public class CampaignType implements java.io.Serializable {
 
 	/**
 	* 
@@ -26,21 +24,21 @@ public class Campigantype implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "campigantypeSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "campigantype")
-	@GeneratedValue(generator = "campigantypeSeq", strategy = GenerationType.TABLE)
+	@TableGenerator(name = "campaigntypeSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "campaigntype")
+	@GeneratedValue(generator = "campaigntypeSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private String type;
 	private Project project;
 
-	public Campigantype() {
+	public CampaignType() {
 	}
 
-	public Campigantype(int id, String type) {
+	public CampaignType(int id, String type) {
 		this.id = id;
 		this.type = type;
 	}
 
-	public Campigantype(int id, String type, Project projectses) {
+	public CampaignType(int id, String type, Project projectses) {
 		this.id = id;
 		this.type = type;
 		this.project = projectses;
@@ -62,13 +60,26 @@ public class Campigantype implements java.io.Serializable {
 		this.type = type;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
 	public Project getProjectses() {
 		return this.project;
 	}
 
-	public void setProjectses(Project projectses) {
+	public void setProjectses(Project project) {
 		this.project = project;
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,9 @@
-package com.investment.model;
+package com.investment.entity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -56,7 +57,7 @@ public class Teamdetails implements java.io.Serializable {
 		this.id = id;
 	}
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
 	public Project getproject() {
 		return this.project;
 	}

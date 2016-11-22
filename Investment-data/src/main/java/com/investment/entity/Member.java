@@ -1,4 +1,4 @@
-package com.investment.model;
+package com.investment.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

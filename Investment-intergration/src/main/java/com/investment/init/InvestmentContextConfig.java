@@ -16,7 +16,7 @@ import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import com.investment.model.*;
+import com.investment.entity.*;
 
 
 
@@ -39,7 +39,7 @@ public class InvestmentContextConfig {
 	    	dataSource.setDriverClassName("org.postgresql.Driver");
 	    	dataSource.setUrl("jdbc:postgresql://127.0.0.1:5432/investment?tcpKeepAlive=true");
 	    	dataSource.setUsername("postgres");
-	    	dataSource.setPassword("123456");
+	    	dataSource.setPassword("admin");
 	    	
 	    	return dataSource;
 	    }
@@ -49,7 +49,7 @@ public class InvestmentContextConfig {
 	    	Properties properties = new Properties();
 	    	properties.put("hibernate.show_sql", "true");
 	    	properties.put("hibernate.dialect", "org.hibernate.dialect.ProgressDialect");
-	    	//properties.put("hibernate.hbm2ddl.auto", "update");
+	    	/*properties.put("hibernate.hbm2ddl.auto", "create");*/
 	    	return properties;
 	    }
 	    
@@ -57,16 +57,12 @@ public class InvestmentContextConfig {
 	  	@Autowired
 	    @Bean(name = "sessionFactory")
 	    public SessionFactory getSessionFactory(DataSource dataSource) 
-	  	{
-	  		
-		
-	  		
-	  		  
+	  	{ 
 	  		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 	    	sessionBuilder.addProperties(getHibernateProperties());
 	    	sessionBuilder.addAnnotatedClass(User.class);
 	    	sessionBuilder.addAnnotatedClass(Role.class);
-	    	sessionBuilder.addAnnotatedClass(Campigantype.class);
+	    	sessionBuilder.addAnnotatedClass(CampaignType.class);
 	     	sessionBuilder.addAnnotatedClass(Company.class);
 	     	sessionBuilder.addAnnotatedClass(Currency.class);
 	     	sessionBuilder.addAnnotatedClass(Customertype.class);
@@ -102,3 +98,8 @@ public class InvestmentContextConfig {
 		}
 	    
 }
+
+
+
+
+

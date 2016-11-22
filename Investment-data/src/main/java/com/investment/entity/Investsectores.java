@@ -1,4 +1,4 @@
-package com.investment.model;
+package com.investment.entity;
 // Generated 16-Nov-2016 17:31:17 by Hibernate Tools 4.3.1
 
 import java.util.HashSet;

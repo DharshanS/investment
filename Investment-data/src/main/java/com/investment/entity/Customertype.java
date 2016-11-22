@@ -1,9 +1,12 @@
-package com.investment.model;
+package com.investment.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
@@ -57,12 +60,13 @@ public class Customertype implements java.io.Serializable {
 		this.type = type;
 	}
 
-	public Project getProjectses() {
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
+	public Project getProjects() {
 		return this.project;
 	}
 
-	public void setProjectses(Project projectses) {
-		this.project = projectses;
+	public void setProjects(Project project) {
+		this.project = project;
 	}
 
 }

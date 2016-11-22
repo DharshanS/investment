@@ -1,9 +1,11 @@
-package com.investment.model;
+package com.investment.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
@@ -52,6 +54,7 @@ public class Investsectorsmap implements java.io.Serializable {
 		this.investsectores = investsectores;
 	}
 
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project")
 	public Project getproject() {
 		return this.project;
 	}

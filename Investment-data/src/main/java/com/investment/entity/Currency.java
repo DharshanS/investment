@@ -1,8 +1,9 @@
-package com.investment.model;
+package com.investment.entity;
 
 
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -72,7 +73,7 @@ public class Currency  implements java.io.Serializable {
         this.symbol = symbol;
     }
     
-    @OneToOne(fetch=FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
     public Project getProjectses() {
         return this.project;
     }

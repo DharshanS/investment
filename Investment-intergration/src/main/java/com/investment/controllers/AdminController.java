@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.investment.entity.User;
 import com.investment.json.CreateProjectRequest;
 import com.investment.json.CreateProjectResponse;
-import com.investment.model.User;
 
 @RestController
 public class AdminController {
@@ -30,18 +30,13 @@ public class AdminController {
 	@RequestMapping(value = "/createproject", method = RequestMethod.POST)
 	public ResponseEntity<CreateProjectResponse> uploadFile(@RequestBody CreateProjectRequest createProject) {
 		System.out.println("inside the admin project creation method");
-		System.out.println(createProject.getProjectName());
-		System.out.println(createProject.getImageUrl());
-		System.out.println(createProject.getVideoUrl());
-		System.out.println(createProject.getAmount());
-		System.out.println(createProject.getCampaignType());
-		System.out.println(createProject.getNoOfShares());
+		
+		
 		
 		return null;
 	}
 
 }
-
 
 
 
