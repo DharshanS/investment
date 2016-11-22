@@ -1,5 +1,5 @@
 package com.investment.json;
 
-public class CreateProjectResponse {
+public class CreateProjectResponse extends BaseResponse {
 
 }
