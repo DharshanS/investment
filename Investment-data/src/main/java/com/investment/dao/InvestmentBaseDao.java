@@ -1,21 +1,20 @@
 
-/**
- * 
- */
 package com.investment.dao;
 
 import java.util.List;
 
-/**
- * @author Dharshan.S
- *
- */
-public interface InvestmentBaseDao {
-	
-	public <T> Object findById(int id);
-	public <T> Object findByEmail(String email);
-	public <T> Object insert(T object);
-	public <T> List<T> viewAll(String table);
-	public <T> Object findByName(String name);
+public interface InvestmentBaseDao<T> {
+
+	public T findById(Integer id);
+
+	public T findByEmail(String email);
+
+	public T persist(T message);
+
+	public void delete(T entity);
+
+	public void update(T entyty);
+
+	public List<T> getAllRecords();
 
 }
