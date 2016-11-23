@@ -14,16 +14,17 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
+
 	private final Class<T> entityClass;
-	
+
 	public BaseDaoImpl() {
 		this.entityClass = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass())
 				.getActualTypeArguments()[0];
 	}
 
 	protected Session getSession() {
-		return this.sessionFactory.getCurrentSession();
+		return this.sessionFactory.openSession();
 	}
 
 	@Override
@@ -38,14 +39,14 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
 	@Override
 	public boolean persist(T entity) {
-		
-		try{
+
+		try {
 			getSession().save(entity);
 			return true;
-		}catch(Exception e){
+		} catch (Exception e) {
 			return false;
 		}
-		
+
 	}
 
 	@Override
@@ -55,10 +56,10 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
 	@Override
 	public boolean update(T entity) {
-		try{
+		try {
 			getSession().saveOrUpdate(entity);
 			return true;
-		}catch(Exception e){
+		} catch (Exception e) {
 			return false;
 		}
 	}
@@ -66,9 +67,8 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 	@Override
 	public List<T> getAllRecords() {
 		return getSession().createCriteria(this.entityClass).list();
-
 	}
-	
+
 	@Override
 	public void deleteAllRecords() {
 		List<T> entities = getAllRecords();
@@ -76,7 +76,7 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 			getSession().delete(entity);
 		}
 	}
-	
+
 	@Override
 	public void clear() {
 		getSession().clear();
@@ -89,8 +89,6 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
 	}
 }
-
-
 
 
 
