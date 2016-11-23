@@ -11,3 +11,9 @@ public interface BaseManager<T> {
     public T findById(int id) throws Exception;
 	
 }
+
+
+
+
+
+

@@ -11,17 +11,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.investment.entity.Currency;
 import com.investment.entity.Project;
 import com.investment.entity.User;
 import com.investment.json.CreateProjectRequest;
 import com.investment.json.CreateProjectResponse;
+import com.investment.manager.CurrencyManager;
 import com.investment.manager.UserManager;
 
 @RestController
 public class AdminController {
-	
+
 	@Autowired
 	private UserManager userManager;
+	
+	@Autowired
+	private CurrencyManager currencyManager;
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUsers() {
@@ -75,22 +80,35 @@ public class AdminController {
 			// add the correct user to the project
 			List<User> users = new ArrayList<User>();
 			users = userManager.getAllRecords();
-
 			for (User ur : users) {
-				System.out.println("User Email : " + ur.getEmail());
+				if (ur.getId() == createProject.getUserId()) {
+					project.setUsers(ur);
+					System.out.println("User Email : " + ur.getEmail());
+				}
 			}
 
-			// project.setUsers(new User());
-			// project.setCurrency(new Currency());
+			// add the currency object to the project object
+			List<Currency> currencyList = new ArrayList<Currency>();
+			currencyList = currencyManager.getAllRecords();
+			for (Currency c : currencyList) {
+				System.out.println("currency Country Name :  " + c.getCountry());
+				if (c.getId() == createProject.getCurrencyId()) {
+					project.setCurrency(c);
+					System.out.println("Selected Currency Country :  " + c.getCountry());
+				}
+			}
+
 			// project.setCustomertype(createProject.getCustomerTypeId());
 			// project.setCompanies();
 			// project.setTeamdetailses();
 			// project.setInvestsectorsmaps(investsectorsmaps);
 		} catch (Exception e) {
-
+			System.out.println("Admin Controller Exception :  " + e);
 		}
 
 		return null;
 	}
 
 }
+
+
