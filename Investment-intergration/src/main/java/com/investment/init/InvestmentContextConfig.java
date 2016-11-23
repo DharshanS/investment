@@ -29,7 +29,7 @@ import com.investment.entity.*;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.investment.controllers","com.investment.services","com.investment.dao","com.investment.model","com.investment.json"})
+@ComponentScan(basePackages = { "com.investment.controllers","com.investment.services","com.investment.dao","com.investment.entity","com.investment.json","com.investment.manager"})
 public class InvestmentContextConfig {
 	
 	

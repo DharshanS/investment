@@ -1,3 +1,4 @@
-com\investment\init\InvestmentContextConfig.class
 com\investment\init\InvestmentInitizalizer.class
+com\investment\init\InvestmentContextConfig.class
+com\investment\controllers\AdminController.class
 com\investment\controllers\UserController.class

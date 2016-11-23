@@ -9,6 +9,7 @@ com\investment\services\entrepreneur\EntrepreneurServicesImp.class
 com\investment\utility\InvestmentConstants.class
 com\investment\json\UserLogoutRequest.class
 com\investment\json\InvestorsRequest.class
+com\investment\manager\UserManager.class
 com\investment\pojo\Response.class
 com\investment\json\UserRegistrationRequest.class
 com\investment\json\CreateProjectResponse.class
@@ -20,9 +21,11 @@ com\investment\json\BaseResponse.class
 com\investment\json\ViewProjectRequest.class
 com\investment\services\InvestmentService.class
 com\investment\json\SubscriptionRequest.class
+com\investment\manager\UserManagerImpl.class
 com\investment\json\EntrepreneurResponse.class
 com\investment\json\AnalyticsResponse.class
 com\investment\json\UserLoginResponse.class
+com\investment\manager\BaseManager.class
 com\investment\json\UserLogoutResponse.class
 com\investment\json\InvestorsResponse.class
 com\investment\json\UserLoginRequest.class
