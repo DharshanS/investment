@@ -26,15 +26,14 @@ public class AdminController {
 		}
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
-
+	
 	@RequestMapping(value = "/createproject", method = RequestMethod.POST)
-	public ResponseEntity<CreateProjectResponse> uploadFile(@RequestBody CreateProjectRequest createProject) {
-		System.out.println("inside the admin project creation method");
-		
-		
-		
+	public ResponseEntity<CreateProjectResponse> createProject(@RequestBody CreateProjectRequest createProject)
+			throws Exception {
+		System.out.println("inside the create project method");
 		return null;
 	}
+
 
 }
 
