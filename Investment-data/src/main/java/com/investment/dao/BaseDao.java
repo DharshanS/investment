@@ -11,7 +11,7 @@ public interface BaseDao<T> {
 
 	public boolean persist(T message);
 
-	public void delete(T entity);
+	public boolean delete(T entity);
 
 	public boolean update(T entyty);
 

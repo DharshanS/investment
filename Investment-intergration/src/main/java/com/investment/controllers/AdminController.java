@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.investment.entity.Currency;
+import com.investment.entity.Customertype;
 import com.investment.entity.Project;
 import com.investment.entity.User;
 import com.investment.json.CreateProjectRequest;
 import com.investment.json.CreateProjectResponse;
 import com.investment.manager.CurrencyManager;
+import com.investment.manager.CustomertypeManager;
 import com.investment.manager.UserManager;
 
 @RestController
@@ -24,9 +26,12 @@ public class AdminController {
 
 	@Autowired
 	private UserManager userManager;
-	
+
 	@Autowired
 	private CurrencyManager currencyManager;
+
+	@Autowired
+	private CustomertypeManager customertypeManager;
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUsers() {
@@ -83,10 +88,11 @@ public class AdminController {
 			for (User ur : users) {
 				if (ur.getId() == createProject.getUserId()) {
 					project.setUsers(ur);
-					System.out.println("User Email : " + ur.getEmail());
+					System.out.println("Selected User Email : " + ur.getEmail());
 				}
 			}
 
+			System.out.println("Begining of Currency");
 			// add the currency object to the project object
 			List<Currency> currencyList = new ArrayList<Currency>();
 			currencyList = currencyManager.getAllRecords();
@@ -96,6 +102,18 @@ public class AdminController {
 					project.setCurrency(c);
 					System.out.println("Selected Currency Country :  " + c.getCountry());
 				}
+			}
+
+			System.out.println("-----------------------------------------------------------------------------------");
+
+			Customertype ctype = null;
+			ctype = customertypeManager.findById(createProject.getCustomerTypeId());
+			System.out.println("customer type : " + ctype.getType());
+
+			List<Customertype> cTypeList = new ArrayList<Customertype>();
+			cTypeList = customertypeManager.getAllRecords();
+			for (Customertype c : cTypeList) {
+				System.out.println("c type : " + c.getType());
 			}
 
 			// project.setCustomertype(createProject.getCustomerTypeId());
@@ -110,5 +128,11 @@ public class AdminController {
 	}
 
 }
+
+
+
+
+
+
 
 

@@ -9,29 +9,85 @@ import com.investment.dao.CurrencyDao;
 import com.investment.entity.Currency;
 
 @Service
-public class CurrencyManagerImpl implements CurrencyManager{
+public class CurrencyManagerImpl implements CurrencyManager {
 
 	@Autowired
 	protected CurrencyDao currencyDao = null;
-	
+
 	@Override
-	public Currency insert(Currency entity) throws Exception {
-		
-		return null;
+	public boolean insert(Currency entity) throws Exception {
+		boolean inserted = false;
+		try {
+			currencyDao.persist(entity);
+			inserted = true;
+			return inserted;
+		} catch (Exception e) {
+			return inserted;
+		}
 	}
 
 	@Override
-	public List<Currency> getAllRecords() throws Exception {
-		return currencyDao.getAllRecords();
+	public boolean update(Currency entyty) {
+		boolean updated = false;
+		try {
+			currencyDao.update(entyty);
+			updated = true;
+			return updated;
+		} catch (Exception e) {
+			updated = false;
+			return updated;
+		}
+	}
+
+	@Override
+	public boolean delete(Currency entity) {
+		boolean deleted = false;
+		try {
+			deleted = currencyDao.delete(entity);
+		} catch (Exception e) {
+			return deleted;
+		}
+		return deleted;
 	}
 
 	@Override
 	public Currency findById(int id) throws Exception {
-
-		return null;
+		return currencyDao.findById(id);
 	}
 
+	@Override
+	public Currency findByEmail(String email) {
+		return currencyDao.findByEmail(email);
+	}
+
+	@Override
+	public List<Currency> getAllRecords() throws Exception {
+		List<Currency> currencyList = null;
+		try {
+			currencyList = currencyDao.getAllRecords();
+		} catch (Exception e) {
+			return currencyList;
+		}
+		return currencyList;
+	}
+
+	@Override
+	public boolean deleteAllRecords() {
+		boolean deleted = false;
+		try {
+			currencyDao.deleteAllRecords();
+			deleted = true;
+			return deleted;
+		} catch (Exception e) {
+			return deleted;
+		}
+	}
 }
+
+
+
+
+
 
 
 

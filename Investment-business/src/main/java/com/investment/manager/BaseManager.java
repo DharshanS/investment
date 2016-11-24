@@ -4,13 +4,24 @@ import java.util.List;
 
 public interface BaseManager<T> {
 
-	public T insert(T entity) throws Exception;
+	public boolean insert(T entity) throws Exception;
+	
+	public boolean update(T entyty);
+	
+	public boolean delete(T entity);
+	
+	public T findById(int id) throws Exception;
+
+	public T findByEmail(String email);
 
     public List<T> getAllRecords() throws Exception;
 
-    public T findById(int id) throws Exception;
-	
+	boolean deleteAllRecords();
+
 }
+
+
+
 
 
 

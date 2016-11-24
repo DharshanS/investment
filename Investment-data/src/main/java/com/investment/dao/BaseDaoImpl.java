@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,7 +15,6 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-
 
 	private final Class<T> entityClass;
 
@@ -34,24 +34,31 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
 	@Override
 	public T findByEmail(String email) {
-		return null;
+		return (T) getSession().createCriteria(this.entityClass).add(Restrictions.like("email", email)).uniqueResult();
 	}
 
 	@Override
 	public boolean persist(T entity) {
-
+		boolean inserted = false;
 		try {
 			getSession().save(entity);
-			return true;
+			inserted = true;
+			return inserted;
 		} catch (Exception e) {
-			return false;
+			return inserted;
 		}
-
 	}
 
 	@Override
-	public void delete(T entity) {
-		getSession().delete(entity);
+	public boolean delete(T entity) {
+		boolean deleted  = false;
+		try{
+			getSession().delete(entity);
+			deleted = true;
+			return deleted;
+		}catch(Exception e){
+			return deleted;
+		}
 	}
 
 	@Override
@@ -88,6 +95,7 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 		getSession().flush();
 
 	}
+	
 }
 
 
