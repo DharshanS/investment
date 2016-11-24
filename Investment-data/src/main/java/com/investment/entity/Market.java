@@ -1,7 +1,6 @@
 package com.investment.entity;
 // Generated 16-Nov-2016 17:31:17 by Hibernate Tools 4.3.1
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -11,10 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-/**
- * @author Dharshan.S
- *
- */
+
 @Entity(name = "Market")
 @Table(name = "market")
 public class Market implements java.io.Serializable {
