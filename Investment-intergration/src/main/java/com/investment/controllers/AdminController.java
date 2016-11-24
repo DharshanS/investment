@@ -15,6 +15,7 @@ import com.investment.entity.Company;
 import com.investment.entity.Currency;
 import com.investment.entity.Customertype;
 import com.investment.entity.Project;
+import com.investment.entity.Teamdetails;
 import com.investment.entity.User;
 import com.investment.json.CreateProjectRequest;
 import com.investment.json.CreateProjectResponse;
@@ -124,8 +125,10 @@ public class AdminController {
 			// add the company details
 			Company newCompany = new Company();
 			
+			// add the team details
+			Teamdetails companyTeam = new Teamdetails();
 			
-			// project.setCompanies();
+			
 			// project.setTeamdetailses();
 			// project.setInvestsectorsmaps(investsectorsmaps);
 		} catch (Exception e) {
