@@ -2,7 +2,6 @@
 package com.investment.entity;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -14,17 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-/**
- * @author Dharshan.S
- *
- */
 @Entity(name = "User")
 @Table(name = "users")
 public class User implements java.io.Serializable {
 
-	/**
-	* 
-	*/
 	private static final long serialVersionUID = 1L;
 	@Id
 	@TableGenerator(name = "usersSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "users")

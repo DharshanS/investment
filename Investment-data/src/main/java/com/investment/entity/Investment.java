@@ -7,17 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-/**
- * @author Dharshan.S
- *
- */
 @Entity(name = "Investment")
 @Table(name = "investments")
 public class Investment implements java.io.Serializable {
 
-	/**
-	* 
-	*/
 	private static final long serialVersionUID = 1L;
 
 	@Id

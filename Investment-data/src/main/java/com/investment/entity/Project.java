@@ -1,8 +1,6 @@
 package com.investment.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -15,10 +13,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-/**
- * @author Dharshan.S
- *
- */
 @Entity(name = "Project")
 @Table(name = "projects")
 public class Project implements java.io.Serializable {
@@ -42,10 +36,10 @@ public class Project implements java.io.Serializable {
 	private int status;
 	private User users;
 	private Currency currency;
-	private Customertype customertype;
+	private CustomerType customertype;
 	private Company company;
-	private Teamdetails team;
-	private Investsectorsmap investSectors;
+	private TeamDetail team;
+	private InvestSectorMap investSectors;
 
 	public Project() {
 		super();
@@ -60,7 +54,7 @@ public class Project implements java.io.Serializable {
 	}
 
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
-	//@JoinColumn(name = "caid", nullable = false)
+	// @JoinColumn(name = "caid", nullable = false)
 	public CampaignType getCampigantype() {
 		return this.campigantype;
 	}
@@ -80,12 +74,12 @@ public class Project implements java.io.Serializable {
 	}
 
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project", cascade = CascadeType.ALL)
-	//@JoinColumn(name = "cid", nullable = false)
-	public Customertype getCustomertype() {
+	// @JoinColumn(name = "cid", nullable = false)
+	public CustomerType getCustomertype() {
 		return this.customertype;
 	}
 
-	public void setCustomertype(Customertype customertype) {
+	public void setCustomertype(CustomerType customertype) {
 		this.customertype = customertype;
 	}
 
@@ -128,7 +122,7 @@ public class Project implements java.io.Serializable {
 	public void setAmount(int value) {
 		this.amount = value;
 	}
-	
+
 	public int getNoOfShares() {
 		return this.noOfShares;
 	}
@@ -177,7 +171,6 @@ public class Project implements java.io.Serializable {
 		this.status = status;
 	}
 
-
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project")
 	public Company getCompanies() {
 		return this.company;
@@ -188,28 +181,22 @@ public class Project implements java.io.Serializable {
 	}
 
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project")
-	//@JoinColumn(name = "teamid", nullable = false)
-	public Teamdetails getTeamdetailses() {
+	// @JoinColumn(name = "teamid", nullable = false)
+	public TeamDetail getTeamdetailses() {
 		return this.team;
 	}
 
-	public void setTeamdetailses(Teamdetails teamdetailses) {
+	public void setTeamdetailses(TeamDetail teamdetailses) {
 		this.team = teamdetailses;
 	}
 
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "project")
-	public Investsectorsmap getInvestsectorsmaps() {
+	public InvestSectorMap getInvestsectorsmaps() {
 		return this.investSectors;
 	}
 
-	public void setInvestsectorsmaps(Investsectorsmap investsectorsmaps) {
+	public void setInvestsectorsmaps(InvestSectorMap investsectorsmaps) {
 		this.investSectors = investsectorsmaps;
 	}
 
 }
-
-
-
-
-
-

@@ -1,5 +1,4 @@
 package com.investment.entity;
-// Generated 16-Nov-2016 17:31:17 by Hibernate Tools 4.3.1
 
 import java.util.Set;
 
@@ -10,14 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-
 @Entity(name = "Market")
 @Table(name = "market")
 public class Market implements java.io.Serializable {
 
-	/**
-	* 
-	*/
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -25,7 +20,7 @@ public class Market implements java.io.Serializable {
 	@GeneratedValue(generator = "marketSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private String place;
-//	private Set marketdetailses = new HashSet(0);
+	// private Set marketdetailses = new HashSet(0);
 
 	public Market() {
 	}
@@ -38,7 +33,7 @@ public class Market implements java.io.Serializable {
 	public Market(int id, String place, Set marketdetailses) {
 		this.id = id;
 		this.place = place;
-		//this.marketdetailses = marketdetailses;
+		// this.marketdetailses = marketdetailses;
 	}
 
 	public int getId() {
@@ -57,12 +52,12 @@ public class Market implements java.io.Serializable {
 		this.place = place;
 	}
 
-//	public Set getMarketdetailses() {
-//	//	return this.marketdetailses;
-//	}
-//
-//	public void setMarketdetailses(Set marketdetailses) {
-//		this.marketdetailses = marketdetailses;
-//	}
+	// public Set getMarketdetailses() {
+	// // return this.marketdetailses;
+	// }
+	//
+	// public void setMarketdetailses(Set marketdetailses) {
+	// this.marketdetailses = marketdetailses;
+	// }
 
 }

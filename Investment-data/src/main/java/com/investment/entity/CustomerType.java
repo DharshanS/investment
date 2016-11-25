@@ -8,9 +8,9 @@ import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
 
-@Entity(name = "CampaignType")
-@Table(name = "campaigntype")
-public class CampaignType implements java.io.Serializable {
+@Entity(name = "Customertype")
+@Table(name = "customertype")
+public class CustomerType implements java.io.Serializable {
 
 	/**
 	* 
@@ -18,24 +18,24 @@ public class CampaignType implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "campaigntypeSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "campaigntype")
-	@GeneratedValue(generator = "campaigntypeSeq", strategy = GenerationType.TABLE)
+	@TableGenerator(name = "customertypeSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "customertype")
+	@GeneratedValue(generator = "customertypeSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private String type;
 	/*private Project project;*/
 
-	public CampaignType() {
+	public CustomerType() {
 	}
 
-	public CampaignType(int id, String type) {
+	public CustomerType(int id, String type) {
 		this.id = id;
 		this.type = type;
 	}
 
-	public CampaignType(int id, String type, Project projectses) {
+	public CustomerType(int id, String type, Project project) {
 		this.id = id;
 		this.type = type;
-		/*this.project = projectses;*/
+		/*this.project = project;*/
 	}
 
 	public int getId() {
@@ -54,26 +54,13 @@ public class CampaignType implements java.io.Serializable {
 		this.type = type;
 	}
 
-	/*@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	public Project getProjectses() {
+	/*@OneToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+	public Project getProjects() {
 		return this.project;
-	}*/
+	}
 
-	/*public void setProjectses(Project project) {
+	public void setProjects(Project project) {
 		this.project = project;
 	}*/
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

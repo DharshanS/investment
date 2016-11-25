@@ -7,17 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-/**
- * @author Dharshan.S
- *
- */
 @Entity(name = "Subscription")
 @Table(name = "subscription")
 public class Subscription implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	@Id
 	@TableGenerator(name = "subscriptionSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "subscription")

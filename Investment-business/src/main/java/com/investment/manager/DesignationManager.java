@@ -1,7 +1,7 @@
 package com.investment.manager;
 
-import com.investment.entity.Designations;
+import com.investment.entity.Designation;
 
-public interface DesignationManager extends BaseManager<Designations>{
+public interface DesignationManager extends BaseManager<Designation>{
 
 }

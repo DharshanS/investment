@@ -12,32 +12,38 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.investment.entity.Company;
-import com.investment.entity.Currency;
-import com.investment.entity.Customertype;
 import com.investment.entity.Project;
-import com.investment.entity.Teamdetails;
+import com.investment.entity.TeamDetail;
 import com.investment.entity.User;
 import com.investment.json.CreateProjectRequest;
 import com.investment.json.CreateProjectResponse;
+import com.investment.manager.CampaignTypeManager;
 import com.investment.manager.CompanyManger;
 import com.investment.manager.CurrencyManager;
-import com.investment.manager.CustomertypeManager;
+import com.investment.manager.CustomerTypeManager;
+import com.investment.manager.InvestSectorMapManager;
 import com.investment.manager.UserManager;
 
 @RestController
 public class AdminController {
 
 	@Autowired
-	private UserManager userManager;
+	private UserManager userManager = null;
 
 	@Autowired
-	private CurrencyManager currencyManager;
+	private CurrencyManager currencyManager = null;
 
 	@Autowired
-	private CustomertypeManager customertypeManager;
+	private CustomerTypeManager customertypeManager = null;
 	
 	@Autowired
-	private CompanyManger companyManager;
+	private CompanyManger companyManager = null;
+	
+	@Autowired
+	private CampaignTypeManager campaignTypeManager = null;
+	
+	@Autowired
+	private InvestSectorMapManager investSectorMapManager = null;
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUsers() {
@@ -54,83 +60,34 @@ public class AdminController {
 			throws Exception {
 		try {
 
-			System.out.println("Inside the admin project creation method");
-
-			Project project = new Project();
+			// filling the Project Details
+			Project project = new Project();						
 			project.setprojectName(createProject.getProjectName());
-			System.out.println("project name : " + createProject.getProjectName());
-
 			project.setImageUrl(createProject.getImageUrl());
-			System.out.println("Project image url : " + createProject.getImageUrl());
-
 			project.setVideoUrl(createProject.getVideoUrl());
-			System.out.println("Project Vidoe Url : " + createProject.getVideoUrl());
-
 			project.setAmount(createProject.getAmount());
-			System.out.println("Project Amount : " + createProject.getAmount());
-
-			// project.setCampigantype(createProject.getCampaignType());
+			project.setCampigantype(campaignTypeManager.findById(createProject.getCampaignType()));
 			project.setNoOfShares(createProject.getNoOfShares());
-			System.out.println("No Of Shares : " + createProject.getNoOfShares());
-
 			project.setSingleSharePrice(createProject.getSingleSharePrice());
-			System.out.println("Single Share Price : " + createProject.getSingleSharePrice());
-
 			project.setMinAmmount(createProject.getMinAmmount());
-			System.out.println("Minimum Ammount : " + createProject.getMinAmmount());
-
 			project.setStartdate(createProject.getStartDate());
-			System.out.println("Start Date : " + createProject.getStartDate());
-
 			project.setEnddate(createProject.getEndDate());
-			System.out.println("End Date : " + createProject.getEndDate());
-
 			project.setStatus(createProject.getStatus());
-			System.out.println("Project Satatus : " + createProject.getStatus());
-
-			// add the correct user to the project
-			List<User> users = new ArrayList<User>();
-			users = userManager.getAllRecords();
-			for (User ur : users) {
-				if (ur.getId() == createProject.getUserId()) {
-					project.setUsers(ur);
-					System.out.println("Selected User Email : " + ur.getEmail());
-				}
-			}
-
-			// add the currency object to the project object
-			List<Currency> currencyList = new ArrayList<Currency>();
-			currencyList = currencyManager.getAllRecords();
-			for (Currency c : currencyList) {
-				System.out.println("currency Country Name :  " + c.getCountry());
-				if (c.getId() == createProject.getCurrencyId()) {
-					project.setCurrency(c);
-					System.out.println("Selected Currency Country :  " + c.getCountry());
-				}
-			}
-
-		
-			// add the customer type
-			Customertype ctype = null;
-			ctype = customertypeManager.findById(createProject.getCustomerTypeId());
-			System.out.println("customer type : " + ctype.getType());
-			List<Customertype> cTypeList = new ArrayList<Customertype>();
-			cTypeList = customertypeManager.getAllRecords();
-			for (Customertype c : cTypeList) {
-				if(c.getId() == createProject.getCustomerTypeId()){
-					project.setCustomertype(c);
-				}
-			}
-
-			// add the company details
+			project.setUsers(userManager.findById(createProject.getUserId()));
+			project.setCurrency(currencyManager.findById(createProject.getCurrencyId()));
+			project.setCustomertype(customertypeManager.findById(createProject.getCustomerTypeId()));
+			
+			// filling the company details
 			Company newCompany = new Company();
 			
-			// add the team details
-			Teamdetails companyTeam = new Teamdetails();
 			
+			// filling the team details
+			TeamDetail companyTeam = new TeamDetail();
 			
-			// project.setTeamdetailses();
-			// project.setInvestsectorsmaps(investsectorsmaps);
+			// filling investor sector details
+			
+			System.out.println("End of Create Project");
+			
 		} catch (Exception e) {
 			System.out.println("Admin Controller Exception :  " + e);
 		}

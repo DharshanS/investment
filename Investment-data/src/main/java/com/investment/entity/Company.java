@@ -12,10 +12,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-/**
- * @author Dharshan.S
- *
- */
+
 @Entity(name = "Company")
 @Table(name = "company")
 public class Company implements java.io.Serializable {

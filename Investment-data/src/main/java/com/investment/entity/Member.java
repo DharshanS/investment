@@ -7,30 +7,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-/**
- * @author Dharshan.S
- *
- */
 @Entity(name = "Member")
 @Table(name = "member")
 public class Member implements java.io.Serializable {
 
-	/**
-	* 
-	*/
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@TableGenerator(name = "memberSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "member")
 	@GeneratedValue(generator = "memberSeq", strategy = GenerationType.TABLE)
 	private int id;
-	private Designations designations;
-	private Teamdetails teamdetails;
+	private Designation designations;
+	private TeamDetail teamdetails;
 	private String name;
 	private int mobile;
 	private String address;
@@ -38,7 +30,7 @@ public class Member implements java.io.Serializable {
 	public Member() {
 	}
 
-	public Member(int id, Designations designations, Teamdetails teamdetails, String name, int mobile, String address) {
+	public Member(int id, Designation designations, TeamDetail teamdetails, String name, int mobile, String address) {
 		this.id = id;
 		this.designations = designations;
 		this.teamdetails = teamdetails;
@@ -57,20 +49,20 @@ public class Member implements java.io.Serializable {
 
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "did")
-	public Designations getDesignations() {
+	public Designation getDesignations() {
 		return this.designations;
 	}
 
-	public void setDesignations(Designations designations) {
+	public void setDesignations(Designation designations) {
 		this.designations = designations;
 	}
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	public Teamdetails getTeamdetails() {
+	@ManyToOne(fetch = FetchType.LAZY)
+	public TeamDetail getTeamdetails() {
 		return this.teamdetails;
 	}
 
-	public void setTeamdetails(Teamdetails teamdetails) {
+	public void setTeamdetails(TeamDetail teamdetails) {
 		this.teamdetails = teamdetails;
 	}
 

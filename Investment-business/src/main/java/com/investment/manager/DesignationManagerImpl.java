@@ -5,17 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.investment.dao.DesignationsDao;
-import com.investment.entity.Designations;
+import com.investment.dao.DesignationDao;
+import com.investment.entity.Designation;
 
 @Service
 public class DesignationManagerImpl implements DesignationManager {
 
 	@Autowired
-	private DesignationsDao designationDao = null;
+	private DesignationDao designationDao = null;
 
 	@Override
-	public boolean insert(Designations entity) throws Exception {
+	public boolean insert(Designation entity) throws Exception {
 		boolean inserted = false;
 		try {
 			designationDao.persist(entity);
@@ -27,7 +27,7 @@ public class DesignationManagerImpl implements DesignationManager {
 	}
 
 	@Override
-	public boolean update(Designations entyty) {
+	public boolean update(Designation entyty) {
 		boolean updated = false;
 		try {
 			designationDao.update(entyty);
@@ -40,7 +40,7 @@ public class DesignationManagerImpl implements DesignationManager {
 	}
 
 	@Override
-	public boolean delete(Designations entity) {
+	public boolean delete(Designation entity) {
 		boolean deleted = false;
 		try {
 			deleted = designationDao.delete(entity);
@@ -51,18 +51,18 @@ public class DesignationManagerImpl implements DesignationManager {
 	}
 
 	@Override
-	public Designations findById(int id) throws Exception {
+	public Designation findById(int id) throws Exception {
 		return designationDao.findById(id);
 	}
 
 	@Override
-	public Designations findByEmail(String email) {
+	public Designation findByEmail(String email) {
 		return designationDao.findByEmail(email);
 	}
 
 	@Override
-	public List<Designations> getAllRecords() throws Exception {
-		List<Designations> designationsList = null;
+	public List<Designation> getAllRecords() throws Exception {
+		List<Designation> designationsList = null;
 		try {
 			designationsList = designationDao.getAllRecords();
 		} catch (Exception e) {
