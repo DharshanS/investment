@@ -3,10 +3,12 @@ package com.investment.manager;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.investment.dao.InvestsectoreDao;
 import com.investment.entity.Investsectores;
 
+@Service
 public class InvestsectoreManagerImpl implements InvestsectoreManager {
 
 	@Autowired
