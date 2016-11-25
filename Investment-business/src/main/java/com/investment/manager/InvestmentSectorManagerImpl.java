@@ -5,17 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.investment.dao.InvestSectorDao;
-import com.investment.entity.InvestSector;
+import com.investment.dao.InvestmentSectorDao;
+import com.investment.entity.InvestmentSector;
 
 @Service
-public class InvestSectorManagerImpl implements InvestSectorManager {
+public class InvestmentSectorManagerImpl implements InvestmentSectorManager {
 
 	@Autowired
-	private InvestSectorDao investsectoreDao = null;
+	private InvestmentSectorDao investsectoreDao = null;
 
 	@Override
-	public boolean insert(InvestSector entity) throws Exception {
+	public boolean insert(InvestmentSector entity) throws Exception {
 		boolean inserted = false;
 		try {
 			investsectoreDao.persist(entity);
@@ -27,7 +27,7 @@ public class InvestSectorManagerImpl implements InvestSectorManager {
 	}
 
 	@Override
-	public boolean update(InvestSector entyty) {
+	public boolean update(InvestmentSector entyty) {
 		boolean updated = false;
 		try {
 			investsectoreDao.update(entyty);
@@ -40,7 +40,7 @@ public class InvestSectorManagerImpl implements InvestSectorManager {
 	}
 
 	@Override
-	public boolean delete(InvestSector entity) {
+	public boolean delete(InvestmentSector entity) {
 		boolean deleted = false;
 		try {
 			deleted = investsectoreDao.delete(entity);
@@ -51,18 +51,18 @@ public class InvestSectorManagerImpl implements InvestSectorManager {
 	}
 
 	@Override
-	public InvestSector findById(int id) throws Exception {
+	public InvestmentSector findById(int id) throws Exception {
 		return investsectoreDao.findById(id);
 	}
 
 	@Override
-	public InvestSector findByEmail(String email) {
+	public InvestmentSector findByEmail(String email) {
 		return investsectoreDao.findByEmail(email);
 	}
 
 	@Override
-	public List<InvestSector> getAllRecords() throws Exception {
-		List<InvestSector> investSectorsList = null;
+	public List<InvestmentSector> getAllRecords() throws Exception {
+		List<InvestmentSector> investSectorsList = null;
 		try {
 			investSectorsList = investsectoreDao.getAllRecords();
 		} catch (Exception e) {

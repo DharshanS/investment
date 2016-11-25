@@ -3,6 +3,9 @@ package com.investment.json;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.investment.entity.Company;
+import com.investment.entity.TeamDetail;
+
 
 public class CreateProjectRequest implements Serializable {
 
@@ -28,6 +31,9 @@ public class CreateProjectRequest implements Serializable {
 	private int currencyId;
 	private int customerTypeId;
 	private int categoryId;
+	
+	private Company company;
+	private TeamDetail teamDetails;
 	
 	public int getId() {
 		return id;

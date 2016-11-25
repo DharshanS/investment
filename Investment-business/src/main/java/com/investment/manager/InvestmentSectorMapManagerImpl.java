@@ -5,17 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.investment.dao.InvestSectorMapDao;
-import com.investment.entity.InvestSectorMap;
+import com.investment.dao.InvestmentSectorMapDao;
+import com.investment.entity.InvestmentSectorMap;
 
 @Service
-public class InvestSectorMapManagerImpl implements InvestSectorMapManager {
+public class InvestmentSectorMapManagerImpl implements InvestmentSectorMapManager {
 
 	@Autowired
-	private InvestSectorMapDao investsectorsmapDao = null;
+	private InvestmentSectorMapDao investsectorsmapDao = null;
 
 	@Override
-	public boolean insert(InvestSectorMap entity) throws Exception {
+	public boolean insert(InvestmentSectorMap entity) throws Exception {
 		boolean inserted = false;
 		try {
 			investsectorsmapDao.persist(entity);
@@ -27,7 +27,7 @@ public class InvestSectorMapManagerImpl implements InvestSectorMapManager {
 	}
 
 	@Override
-	public boolean update(InvestSectorMap entyty) {
+	public boolean update(InvestmentSectorMap entyty) {
 		boolean updated = false;
 		try {
 			investsectorsmapDao.update(entyty);
@@ -40,7 +40,7 @@ public class InvestSectorMapManagerImpl implements InvestSectorMapManager {
 	}
 
 	@Override
-	public boolean delete(InvestSectorMap entity) {
+	public boolean delete(InvestmentSectorMap entity) {
 		boolean deleted = false;
 		try {
 			deleted = investsectorsmapDao.delete(entity);
@@ -51,18 +51,18 @@ public class InvestSectorMapManagerImpl implements InvestSectorMapManager {
 	}
 
 	@Override
-	public InvestSectorMap findById(int id) throws Exception {
+	public InvestmentSectorMap findById(int id) throws Exception {
 		return investsectorsmapDao.findById(id);
 	}
 
 	@Override
-	public InvestSectorMap findByEmail(String email) {
+	public InvestmentSectorMap findByEmail(String email) {
 		return investsectorsmapDao.findByEmail(email);
 	}
 
 	@Override
-	public List<InvestSectorMap> getAllRecords() throws Exception {
-		List<InvestSectorMap> investSectorsMapList = null;
+	public List<InvestmentSectorMap> getAllRecords() throws Exception {
+		List<InvestmentSectorMap> investSectorsMapList = null;
 		try {
 			investSectorsMapList = investsectorsmapDao.getAllRecords();
 		} catch (Exception e) {

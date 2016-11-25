@@ -68,8 +68,8 @@ public class InvestmentContextConfig {
 	     	sessionBuilder.addAnnotatedClass(CustomerType.class);
 	     	sessionBuilder.addAnnotatedClass(Designation.class);
 	     	sessionBuilder.addAnnotatedClass(Investment.class);
-	     	sessionBuilder.addAnnotatedClass(InvestSector.class);
-	     	sessionBuilder.addAnnotatedClass(InvestSectorMap.class);
+	     	sessionBuilder.addAnnotatedClass(InvestmentSector.class);
+	     	sessionBuilder.addAnnotatedClass(InvestmentSectorMap.class);
 	     	sessionBuilder.addAnnotatedClass(Market.class);
 	     	sessionBuilder.addAnnotatedClass(MarketDetails.class);
 	     	sessionBuilder.addAnnotatedClass(MarketStratergy.class);

@@ -21,7 +21,7 @@ import com.investment.manager.CampaignTypeManager;
 import com.investment.manager.CompanyManger;
 import com.investment.manager.CurrencyManager;
 import com.investment.manager.CustomerTypeManager;
-import com.investment.manager.InvestSectorMapManager;
+import com.investment.manager.InvestmentSectorMapManager;
 import com.investment.manager.UserManager;
 
 @RestController
@@ -43,7 +43,7 @@ public class AdminController {
 	private CampaignTypeManager campaignTypeManager = null;
 	
 	@Autowired
-	private InvestSectorMapManager investSectorMapManager = null;
+	private InvestmentSectorMapManager investSectorMapManager = null;
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUsers() {
@@ -82,9 +82,9 @@ public class AdminController {
 			
 			
 			// filling the team details
-			TeamDetail companyTeam = new TeamDetail();
+			TeamDetail teamDetails = new TeamDetail();
 			
-			// filling investor sector details
+			// filling investsector details
 			
 			System.out.println("End of Create Project");
 			

@@ -11,7 +11,7 @@ import javax.persistence.TableGenerator;
 
 @Entity(name = "Investsectorsmap")
 @Table(name = "investsectorsmap")
-public class InvestSectorMap implements java.io.Serializable {
+public class InvestmentSectorMap implements java.io.Serializable {
 
 	/**
 	* 
@@ -22,13 +22,13 @@ public class InvestSectorMap implements java.io.Serializable {
 	@TableGenerator(name = "investsectorsmapSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investsectorsmap")
 	@GeneratedValue(generator = "investsectorsmapSeq", strategy = GenerationType.TABLE)
 	private int id;
-	private InvestSector investsectores;
+	private InvestmentSector investsectores;
 	private Project project;
 
-	public InvestSectorMap() {
+	public InvestmentSectorMap() {
 	}
 
-	public InvestSectorMap(int id, InvestSector investsectores, Project project) {
+	public InvestmentSectorMap(int id, InvestmentSector investsectores, Project project) {
 		this.id = id;
 		this.investsectores = investsectores;
 		this.project = project;
@@ -42,11 +42,11 @@ public class InvestSectorMap implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public InvestSector getInvestsectores() {
+	public InvestmentSector getInvestsectores() {
 		return this.investsectores;
 	}
 
-	public void setInvestsectores(InvestSector investsectores) {
+	public void setInvestsectores(InvestmentSector investsectores) {
 		this.investsectores = investsectores;
 	}
 
