@@ -3,18 +3,10 @@ package com.investment.json;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.investment.entity.Company;
-import com.investment.entity.TeamDetail;
-
-
 public class CreateProjectRequest implements Serializable {
 
-	/**
-	 * Author:Masith Prasanga
-	 */
 	private static final long serialVersionUID = 1L;
-	
-	
+
 	private int id;
 	private String projectName;
 	private String imageUrl;
@@ -31,109 +23,167 @@ public class CreateProjectRequest implements Serializable {
 	private int currencyId;
 	private int customerTypeId;
 	private int categoryId;
-	
 	private Company company;
 	private TeamDetail teamDetails;
+	private InvestmentSector investmentSector;
 	
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	public String getProjectName() {
 		return projectName;
 	}
+
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
 	}
+
 	public String getImageUrl() {
 		return imageUrl;
 	}
+
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+
 	public String getVideoUrl() {
 		return videoUrl;
 	}
+
 	public void setVideoUrl(String videoUrl) {
 		this.videoUrl = videoUrl;
 	}
+
 	public int getAmount() {
 		return amount;
 	}
+
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
+
 	public int getCampaignType() {
 		return campaignType;
 	}
+
 	public void setCampaignType(int campaignType) {
 		this.campaignType = campaignType;
 	}
+
 	public int getNoOfShares() {
 		return noOfShares;
 	}
+
 	public void setNoOfShares(int noOfShares) {
 		this.noOfShares = noOfShares;
 	}
+
 	public int getSingleSharePrice() {
 		return singleSharePrice;
 	}
+
 	public void setSingleSharePrice(int singleSharePrice) {
 		this.singleSharePrice = singleSharePrice;
 	}
+
 	public int getMinAmmount() {
 		return minAmmount;
 	}
+
 	public void setMinAmmount(int minAmmount) {
 		this.minAmmount = minAmmount;
 	}
+
 	public Date getStartDate() {
 		return startDate;
 	}
+
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
+
 	public Date getEndDate() {
 		return endDate;
 	}
+
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
+
 	public int getStatus() {
 		return status;
 	}
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
+
 	public int getUserId() {
 		return userId;
 	}
+
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
 	public int getCurrencyId() {
 		return currencyId;
 	}
+
 	public void setCurrencyId(int currencyId) {
 		this.currencyId = currencyId;
 	}
+
 	public int getCustomerTypeId() {
 		return customerTypeId;
 	}
+
 	public void setCustomerTypeId(int customerTypeId) {
 		this.customerTypeId = customerTypeId;
 	}
+
 	public int getCategoryId() {
 		return categoryId;
 	}
+
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	public Company getCompany() {
+		return company;
+	}
+
+	public void setCompany(Company company) {
+		this.company = company;
+	}
+
+	public InvestmentSector getInvestmentSector() {
+		return investmentSector;
+	}
+
+	public void setInvestmentSector(InvestmentSector investmentSector) {
+		this.investmentSector = investmentSector;
+	}
+
+	public TeamDetail getTeamDetails() {
+		return teamDetails;
+	}
+
+	public void setTeamDetails(TeamDetail teamDetails) {
+		this.teamDetails = teamDetails;
+	}
+
 	@Override
 	public String toString() {
 		return "CreateProjectRequest [id=" + id + ", projectName=" + projectName + ", imageUrl=" + imageUrl
@@ -143,13 +193,6 @@ public class CreateProjectRequest implements Serializable {
 				+ currencyId + ", customerTypeId=" + customerTypeId + ", categoryId=" + categoryId + "]";
 	}
 }
-
-
-
-
-
-
-
 
 
 

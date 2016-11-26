@@ -9,18 +9,15 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-@Entity(name = "Investsectorsmap")
-@Table(name = "investsectorsmap")
+@Entity(name = "InvestmentSectorMap")
+@Table(name = "investmentsectorsmap")
 public class InvestmentSectorMap implements java.io.Serializable {
 
-	/**
-	* 
-	*/
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "investsectorsmapSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investsectorsmap")
-	@GeneratedValue(generator = "investsectorsmapSeq", strategy = GenerationType.TABLE)
+	@TableGenerator(name = "investmentsectorsmapSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investsectorsmap")
+	@GeneratedValue(generator = "investmentsectorsmapSeq", strategy = GenerationType.TABLE)
 	private int id;
 	private InvestmentSector investsectores;
 	private Project project;
@@ -60,3 +57,8 @@ public class InvestmentSectorMap implements java.io.Serializable {
 	}
 
 }
+
+
+
+
+

@@ -7,18 +7,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
-@Entity(name = "Investsectores")
-@Table(name = "investsectores")
+@Entity(name = "InvestmentSector")
+@Table(name = "investmentsectore")
 public class InvestmentSector implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@TableGenerator(name = "investsectoresSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investsectores")
-	@GeneratedValue(generator = "investsectoresSeq", strategy = GenerationType.TABLE)
+	@TableGenerator(name = "investmentsectore", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investsectores")
+	@GeneratedValue(generator = "investmentsectore", strategy = GenerationType.TABLE)
 	private int id;
 	private String name;
-	private InvestmentSectorMap investsectorsmaps;
+	/*private InvestmentSectorMap investsectorsmaps;*/
 
 	public InvestmentSector() {
 	}
@@ -31,7 +31,7 @@ public class InvestmentSector implements java.io.Serializable {
 	public InvestmentSector(int id, String name, InvestmentSectorMap investsectorsmaps) {
 		this.id = id;
 		this.name = name;
-		this.investsectorsmaps = investsectorsmaps;
+		/*this.investsectorsmaps = investsectorsmaps;*/
 	}
 
 	public int getId() {
@@ -50,12 +50,14 @@ public class InvestmentSector implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public InvestmentSectorMap getInvestsectorsmaps() {
+	/*public InvestmentSectorMap getInvestsectorsmaps() {
 		return this.investsectorsmaps;
 	}
 
 	public void setInvestsectorsmaps(InvestmentSectorMap investsectorsmaps) {
 		this.investsectorsmaps = investsectorsmaps;
-	}
+	}*/
 
 }
+
+

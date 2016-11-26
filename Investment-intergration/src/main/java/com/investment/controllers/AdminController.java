@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.investment.entity.Company;
 import com.investment.entity.Project;
 import com.investment.entity.TeamDetail;
 import com.investment.entity.User;
@@ -21,7 +20,9 @@ import com.investment.manager.CampaignTypeManager;
 import com.investment.manager.CompanyManger;
 import com.investment.manager.CurrencyManager;
 import com.investment.manager.CustomerTypeManager;
+import com.investment.manager.InvestmentSectorManager;
 import com.investment.manager.InvestmentSectorMapManager;
+import com.investment.manager.ProjectManager;
 import com.investment.manager.UserManager;
 
 @RestController
@@ -43,7 +44,13 @@ public class AdminController {
 	private CampaignTypeManager campaignTypeManager = null;
 	
 	@Autowired
-	private InvestmentSectorMapManager investSectorMapManager = null;
+	private InvestmentSectorManager investSectorManager = null;
+	
+	@Autowired
+	private ProjectManager projectManger = null;
+	
+	@Autowired
+	private InvestmentSectorMapManager investmentSectorMapManager = null;
 
 	@RequestMapping(value = "/user", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUsers() {
@@ -76,16 +83,25 @@ public class AdminController {
 			project.setUsers(userManager.findById(createProject.getUserId()));
 			project.setCurrency(currencyManager.findById(createProject.getCurrencyId()));
 			project.setCustomertype(customertypeManager.findById(createProject.getCustomerTypeId()));
+			project.setTeamdetailses(new TeamDetail());
+			projectManger.insert(project);
 			
 			// filling the company details
-			Company newCompany = new Company();
-			
-			
-			// filling the team details
-			TeamDetail teamDetails = new TeamDetail();
-			
-			// filling investsector details
-			
+			/*Company newCompany = new Company();
+			newCompany.setName(createProject.getCompany().getName());
+			newCompany.setAddress(createProject.getCompany().getAddress());
+			newCompany.setCity(createProject.getCompany().getCity());
+			newCompany.setRegisterno(createProject.getCompany().getRegisterno());
+			newCompany.setStarteddate(createProject.getCompany().getStarteddate());
+			newCompany.setWebdetails(createProject.getCompany().getWebdetails());
+			companyManager.insert(newCompany);*/
+		
+			// filling the investment sector details
+			/*InvestmentSectorMap investmentSectorMap = new InvestmentSectorMap();
+			investmentSectorMap.setInvestsectores(investSectorManager.findById(createProject.getInvestmentSector().getId()));
+			investmentSectorMap.setproject(project);
+			investmentSectorMapManager.insert(investmentSectorMap);
+*/
 			System.out.println("End of Create Project");
 			
 		} catch (Exception e) {
