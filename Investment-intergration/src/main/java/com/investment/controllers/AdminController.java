@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.investment.entity.Company;
+import com.investment.entity.InvestmentSectorMap;
 import com.investment.entity.Project;
 import com.investment.entity.TeamDetail;
 import com.investment.entity.User;
@@ -66,6 +68,8 @@ public class AdminController {
 	public ResponseEntity<CreateProjectResponse> createProject(@RequestBody CreateProjectRequest createProject)
 			throws Exception {
 		try {
+			
+			
 
 			// filling the Project Details
 			Project project = new Project();						
@@ -83,25 +87,36 @@ public class AdminController {
 			project.setUsers(userManager.findById(createProject.getUserId()));
 			project.setCurrency(currencyManager.findById(createProject.getCurrencyId()));
 			project.setCustomertype(customertypeManager.findById(createProject.getCustomerTypeId()));
-			project.setTeamdetailses(new TeamDetail());
-			projectManger.insert(project);
+			
+			
 			
 			// filling the company details
-			/*Company newCompany = new Company();
+			Company newCompany = new Company();
 			newCompany.setName(createProject.getCompany().getName());
 			newCompany.setAddress(createProject.getCompany().getAddress());
 			newCompany.setCity(createProject.getCompany().getCity());
 			newCompany.setRegisterno(createProject.getCompany().getRegisterno());
 			newCompany.setStarteddate(createProject.getCompany().getStarteddate());
 			newCompany.setWebdetails(createProject.getCompany().getWebdetails());
-			companyManager.insert(newCompany);*/
+			project.setCompanies(newCompany);
 		
 			// filling the investment sector details
-			/*InvestmentSectorMap investmentSectorMap = new InvestmentSectorMap();
+			InvestmentSectorMap investmentSectorMap = new InvestmentSectorMap();
 			investmentSectorMap.setInvestsectores(investSectorManager.findById(createProject.getInvestmentSector().getId()));
 			investmentSectorMap.setproject(project);
-			investmentSectorMapManager.insert(investmentSectorMap);
-*/
+			project.setInvestsectorsmaps(investmentSectorMap);
+			
+			
+			// filling team details
+			TeamDetail teamDetails  = new TeamDetail(1,project);
+			project.setTeamdetailses(teamDetails);
+
+			
+			projectManger.insert(project);
+			/*companyManager.insert(newCompany);
+			investmentSectorMapManager.insert(investmentSectorMap);*/
+			
+			
 			System.out.println("End of Create Project");
 			
 		} catch (Exception e) {
