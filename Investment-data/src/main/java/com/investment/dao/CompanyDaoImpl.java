@@ -8,3 +8,6 @@ import com.investment.entity.Company;
 public class CompanyDaoImpl extends BaseDaoImpl<Company> implements CompanyDao{
 
 }
+
+
+

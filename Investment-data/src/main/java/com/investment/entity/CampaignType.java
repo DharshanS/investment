@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 
 @Entity(name = "CampaignType")
@@ -17,9 +16,12 @@ public class CampaignType implements java.io.Serializable {
 	*/
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	/*@Id
 	@TableGenerator(name = "campaigntypeSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "campaigntype")
-	@GeneratedValue(generator = "campaigntypeSeq", strategy = GenerationType.TABLE)
+	@GeneratedValue(generator = "campaigntypeSeq", strategy = GenerationType.TABLE)*/
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String type;
 	/*private Project project;*/

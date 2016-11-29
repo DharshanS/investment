@@ -5,16 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Entity(name = "Subscription")
 @Table(name = "subscription")
 public class Subscription implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@Id
+	
+	/*@Id
 	@TableGenerator(name = "subscriptionSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "subscription")
-	@GeneratedValue(generator = "subscriptionSeq", strategy = GenerationType.TABLE)
+	@GeneratedValue(generator = "subscriptionSeq", strategy = GenerationType.TABLE)*/
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private Project projects;
 	private User users;

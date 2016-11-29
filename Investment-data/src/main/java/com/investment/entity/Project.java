@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Entity(name = "Project")
 @Table(name = "projects")
@@ -19,9 +18,12 @@ public class Project implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	/*@Id
 	@TableGenerator(name = "projectsSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "projects")
-	@GeneratedValue(generator = "projectsSeq", strategy = GenerationType.TABLE)
+	@GeneratedValue(generator = "projectsSeq", strategy = GenerationType.TABLE)*/
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String projectName;
 	private String imageUrl;

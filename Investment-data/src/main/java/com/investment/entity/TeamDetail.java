@@ -10,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Entity(name = "Teamdetailsss")
 @Table(name = "teamdetails")
@@ -18,9 +17,12 @@ public class TeamDetail implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	/*@Id
 	@TableGenerator(name = "teamdetailsSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "teamdetails")
-	@GeneratedValue(generator = "teamdetailsSeq", strategy = GenerationType.TABLE)
+	@GeneratedValue(generator = "teamdetailsSeq", strategy = GenerationType.TABLE)*/
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private Project project;
 

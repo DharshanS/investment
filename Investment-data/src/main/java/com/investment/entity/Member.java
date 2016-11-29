@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Entity(name = "Member")
 @Table(name = "member")
@@ -17,9 +16,12 @@ public class Member implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	/*@Id
 	@TableGenerator(name = "memberSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "member")
-	@GeneratedValue(generator = "memberSeq", strategy = GenerationType.TABLE)
+	@GeneratedValue(generator = "memberSeq", strategy = GenerationType.TABLE)*/
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private Designation designations;
 	private TeamDetail teamdetails;

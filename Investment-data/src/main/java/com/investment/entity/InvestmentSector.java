@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Entity(name = "InvestmentSector")
 @Table(name = "investmentsectore")
@@ -13,9 +12,12 @@ public class InvestmentSector implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
+	/*@Id
 	@TableGenerator(name = "investmentsectore", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "investsectores")
-	@GeneratedValue(generator = "investmentsectore", strategy = GenerationType.TABLE)
+	@GeneratedValue(generator = "investmentsectore", strategy = GenerationType.TABLE)*/
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String name;
 	/*private InvestmentSectorMap investsectorsmaps;*/

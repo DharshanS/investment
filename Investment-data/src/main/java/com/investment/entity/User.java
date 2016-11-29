@@ -11,16 +11,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Entity(name = "User")
 @Table(name = "users")
 public class User implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
-	@Id
+	/*@Id
 	@TableGenerator(name = "usersSeq", table = "invesmentSeq", initialValue = 0, allocationSize = 1, pkColumnName = "id", pkColumnValue = "users")
-	@GeneratedValue(generator = "usersSeq", strategy = GenerationType.TABLE)
+	@GeneratedValue(generator = "usersSeq", strategy = GenerationType.TABLE)*/
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String firstname;
 	private String email;
